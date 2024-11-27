@@ -1,0 +1,62 @@
+[
+    {
+        "description": "Print a message",
+        "correct": "print('Hello, World!')",
+        "incorrect": "prin('Hello, World!')",
+        "valid": "print('Python is awesome!')"
+    },
+    {
+        "description": "Define a variable",
+        "correct": "x = 10",
+        "incorrect": "x == 10",
+        "valid": "greeting = 'Hello'"
+    },
+    {
+        "description": "Define a function",
+        "correct": "def greet():\n    print('Hello!')",
+        "incorrect": "def greet)\n    print('Hello!')",
+        "valid": "def add(a, b):\n    return a + b"
+    },
+    {
+        "description": "For loop",
+        "correct": "for i in range(5):\n    print(i)",
+        "incorrect": "for i in range(5)\n    print(i)",
+        "valid": "for name in ['Alice', 'Bob']:\n    print(name)"
+    },
+    {
+        "description": "If-else statement",
+        "correct": "if x > 5:\n    print('Greater')\nelse:\n    print('Smaller')",
+        "incorrect": "if x > 5\n    print('Greater')\nelse:\n    print('Smaller')",
+        "valid": "if age >= 18:\n    print('Adult')\nelse:\n    print('Minor')"
+    },
+    {
+        "description": "While loop",
+        "correct": "while x > 0:\n    x -= 1",
+        "incorrect": "while x > 0\n    x -= 1",
+        "valid": "while True:\n    break"
+    },
+    {
+        "description": "List creation",
+        "correct": "my_list = [1, 2, 3]",
+        "incorrect": "my_list = 1, 2, 3",
+        "valid": "names = ['Alice', 'Bob', 'Charlie']"
+    },
+    {
+        "description": "Dictionary creation",
+        "correct": "my_dict = {'key': 'value'}",
+        "incorrect": "my_dict = {'key', 'value'}",
+        "valid": "user = {'name': 'Alice', 'age': 30}"
+    },
+    {
+        "description": "List comprehension",
+        "correct": "squared = [x**2 for x in range(5)]",
+        "incorrect": "squared = x**2 for x in range(5)",
+        "valid": "evens = [x for x in range(10) if x % 2 == 0]"
+    },
+    {
+        "description": "Import a library",
+        "correct": "import math",
+        "incorrect": "imprt math",
+        "valid": "import os"
+    }
+]
