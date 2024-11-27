@@ -1,0 +1,146 @@
+[
+    {
+        "description": "Define a variable",
+        "correct": "x = 10",
+        "incorrect": "x == 10",
+        "valid": "name = 'Alice'"
+    },
+    {
+        "description": "Define a function",
+        "correct": "def greet():\n    print('Hello!')",
+        "incorrect": "def greet\n    print('Hello!')",
+        "valid": "def add(a, b):\n    return a + b"
+    },
+    {
+        "description": "Define a class",
+        "correct": "class Person:\n    def __init__(self, name):\n        self.name = name",
+        "incorrect": "class Person:\n    init(name):\n        self.name = name",
+        "valid": "class Dog:\n    def __init__(self, breed):\n        self.breed = breed"
+    },
+    {
+        "description": "If-else statement",
+        "correct": "if x > 5:\n    print('Greater')\nelse:\n    print('Smaller')",
+        "incorrect": "if x > 5\n    print('Greater')\nelse\n    print('Smaller')",
+        "valid": "if age >= 18:\n    print('Adult')\nelse:\n    print('Minor')"
+    },
+    {
+        "description": "For loop",
+        "correct": "for i in range(5):\n    print(i)",
+        "incorrect": "for i range(5):\n    print(i)",
+        "valid": "for name in ['Alice', 'Bob']:\n    print(name)"
+    },
+    {
+        "description": "While loop",
+        "correct": "while x > 0:\n    x -= 1",
+        "incorrect": "while x > 0 x -= 1",
+        "valid": "while True:\n    break"
+    },
+    {
+        "description": "List creation",
+        "correct": "my_list = [1, 2, 3]",
+        "incorrect": "my_list = 1, 2, 3",
+        "valid": "names = ['Alice', 'Bob', 'Charlie']"
+    },
+    {
+        "description": "Dictionary creation",
+        "correct": "my_dict = {'key': 'value'}",
+        "incorrect": "my_dict = {'key', 'value'}",
+        "valid": "person = {'name': 'Alice', 'age': 25}"
+    },
+    {
+        "description": "List comprehension",
+        "correct": "squared = [x**2 for x in range(5)]",
+        "incorrect": "squared = x**2 for x in range(5)",
+        "valid": "evens = [x for x in range(10) if x % 2 == 0]"
+    },
+    {
+        "description": "Lambda function",
+        "correct": "square = lambda x: x**2",
+        "incorrect": "square = lambda x x**2",
+        "valid": "add = lambda a, b: a + b"
+    },
+    {
+        "description": "Use `try-except`",
+        "correct": "try:\n    result = 1 / 0\nexcept ZeroDivisionError:\n    print('Cannot divide by zero')",
+        "incorrect": "try:\n    result = 1 / 0\nexcept ZeroDivisionError\n    print('Cannot divide by zero')",
+        "valid": "try:\n    int_value = int('NaN')\nexcept ValueError:\n    print('Invalid conversion')"
+    },
+    {
+        "description": "Use `with` statement",
+        "correct": "with open('file.txt', 'r') as file:\n    data = file.read()",
+        "incorrect": "with open('file.txt', 'r') file:\n    data = file.read()",
+        "valid": "with open('output.txt', 'w') as f:\n    f.write('Hello!')"
+    },
+    {
+        "description": "Create a set",
+        "correct": "my_set = {1, 2, 3}",
+        "incorrect": "my_set = [1, 2, 3]",
+        "valid": "unique_chars = {'a', 'b', 'c'}"
+    },
+    {
+        "description": "Define a generator",
+        "correct": "gen = (x**2 for x in range(5))",
+        "incorrect": "gen = [x**2 for x in range(5)]",
+        "valid": "squares = (x**2 for x in range(10))"
+    },
+    {
+        "description": "Unpack a list",
+        "correct": "a, b, c = [1, 2, 3]",
+        "incorrect": "a, b, c = [1, 2]",
+        "valid": "x, y, z = (4, 5, 6)"
+    },
+    {
+        "description": "Use f-strings",
+        "correct": "name = 'Alice'\nmessage = f'Hello, {name}'",
+        "incorrect": "name = 'Alice'\nmessage = f'Hello, name'",
+        "valid": "age = 25\ninfo = f'I am {age} years old'"
+    },
+    {
+        "description": "Slice a list",
+        "correct": "sub_list = my_list[1:3]",
+        "incorrect": "sub_list = my_list[1-3]",
+        "valid": "first_two = my_list[:2]"
+    },
+    {
+        "description": "Use a decorator",
+        "correct": "@decorator\ndef greet():\n    print('Hello!')",
+        "incorrect": "@decorator\ndef greet:\n    print('Hello!')",
+        "valid": "def decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper"
+    },
+    {
+        "description": "Define a property",
+        "correct": "class Circle:\n    @property\n    def area(self):\n        return 3.14 * self.radius**2",
+        "incorrect": "class Circle:\n    def area(self):\n        return 3.14 * self.radius**2",
+        "valid": "class Square:\n    @property\n    def perimeter(self):\n        return 4 * self.side"
+    },
+    {
+        "description": "Check membership with `in`",
+        "correct": "if 'Alice' in names:\n    print('Found')",
+        "incorrect": "if 'Alice' on names:\n    print('Found')",
+        "valid": "if 3 in [1, 2, 3]:\n    print('Exists')"
+    },
+    {
+        "description": "Use `isinstance` for type checking",
+        "correct": "if isinstance(x, int):\n    print('Integer')",
+        "incorrect": "if type(x) == int:\n    print('Integer')",
+        "valid": "if isinstance(name, str):\n    print('String')"
+    },
+    {
+        "description": "Raise an exception",
+        "correct": "raise ValueError('Invalid value')",
+        "incorrect": "raise ValueError 'Invalid value'",
+        "valid": "raise TypeError('Expected a different type')"
+    },
+    {
+        "description": "Define a static method",
+        "correct": "class Math:\n    @staticmethod\n    def add(a, b):\n        return a + b",
+        "incorrect": "class Math:\n    static def add(a, b):\n        return a + b",
+        "valid": "class Utility:\n    @staticmethod\n    def print_message(msg):\n        print(msg)"
+    },
+    {
+        "description": "Use the `zip` function",
+        "correct": "pairs = list(zip([1, 2], ['a', 'b']))",
+        "incorrect": "pairs = zip([1, 2], ['a', 'b'])",
+        "valid": "zipped = list(zip([1, 2, 3], ['x', 'y', 'z']))"
+    }
+]

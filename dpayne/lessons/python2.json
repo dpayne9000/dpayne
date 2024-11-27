@@ -1,0 +1,92 @@
+[
+    {
+        "description": "Use a context manager to open a file",
+        "correct": "with open('file.txt', 'r') as file:\n    data = file.read()",
+        "incorrect": "with open('file.txt', 'r') as file:\ndata = file.read()",
+        "valid": "with open('output.txt', 'w') as output_file:\n    output_file.write('Hello!')"
+    },
+    {
+        "description": "Create a generator expression",
+        "correct": "squares = (x**2 for x in range(10))",
+        "incorrect": "squares = [x**2 for x in range(10)]",
+        "valid": "evens = (x for x in range(10) if x % 2 == 0)"
+    },
+    {
+        "description": "Define a decorator function",
+        "correct": "def decorator(func):\n    def wrapper(*args, **kwargs):\n        print('Before')\n        result = func(*args, **kwargs)\n        print('After')\n        return result\n    return wrapper",
+        "incorrect": "def decorator(func):\n    def wrapper(*args, **kwargs):\n        print('Before')\n        result = func(*args, **kwargs)\n        return result\n    return wrapper",
+        "valid": "@decorator\ndef greet():\n    print('Hello!')"
+    },
+    {
+        "description": "List comprehension with a condition",
+        "correct": "filtered = [x for x in range(10) if x % 2 == 0]",
+        "incorrect": "filtered = [x for x in range(10) x % 2 == 0]",
+        "valid": "squares = [x**2 for x in range(10)]"
+    },
+    {
+        "description": "Catch multiple exception types",
+        "correct": "try:\n    result = 1 / 0\nexcept (ZeroDivisionError, ValueError):\n    print('Error!')",
+        "incorrect": "try:\n    result = 1 / 0\nexcept ZeroDivisionError, ValueError:\n    print('Error!')",
+        "valid": "try:\n    int_value = int('not_a_number')\nexcept ValueError:\n    print('Conversion failed')"
+    },
+    {
+        "description": "Use a lambda function",
+        "correct": "add = lambda a, b: a + b",
+        "incorrect": "add = lambda a, b a + b",
+        "valid": "square = lambda x: x**2"
+    },
+    {
+        "description": "Unpack arguments with *args",
+        "correct": "def sum_all(*args):\n    return sum(args)",
+        "incorrect": "def sum_all(args):\n    return sum(args)",
+        "valid": "def print_all(*args):\n    for arg in args:\n        print(arg)"
+    },
+    {
+        "description": "Unpack dictionary arguments with **kwargs",
+        "correct": "def print_values(**kwargs):\n    for key, value in kwargs.items():\n        print(f'{key}: {value}')",
+        "incorrect": "def print_values(kwargs):\n    for key, value in kwargs.items():\n        print(f'{key}: {value}')",
+        "valid": "def greet(**kwargs):\n    print(f\"Hello {kwargs['name']}!\")"
+    },
+    {
+        "description": "Sort with a custom key",
+        "correct": "sorted_list = sorted(['a', 'aaa', 'aa'], key=len)",
+        "incorrect": "sorted_list = sorted(['a', 'aaa', 'aa'], key=length)",
+        "valid": "sorted_numbers = sorted([3, 1, 4, 1, 5], key=lambda x: -x)"
+    },
+    {
+        "description": "Use a dictionary comprehension",
+        "correct": "squared_dict = {x: x**2 for x in range(5)}",
+        "incorrect": "squared_dict = {x: x**2 in range(5)}",
+        "valid": "evens_dict = {x: x % 2 == 0 for x in range(5)}"
+    },
+    {
+        "description": "Define a class with __init__",
+        "correct": "class Person:\n    def __init__(self, name):\n        self.name = name",
+        "incorrect": "class Person:\n    def init(self, name):\n        self.name = name",
+        "valid": "class Car:\n    def __init__(self, model, year):\n        self.model = model\n        self.year = year"
+    },
+    {
+        "description": "Use a set comprehension",
+        "correct": "unique = {x for x in [1, 2, 2, 3]}",
+        "incorrect": "unique = [x for x in [1, 2, 2, 3]]",
+        "valid": "squares = {x**2 for x in range(10)}"
+    },
+    {
+        "description": "Raise a custom exception",
+        "correct": "raise ValueError('Invalid value')",
+        "incorrect": "raise ValueError 'Invalid value'",
+        "valid": "raise TypeError('Type mismatch')"
+    },
+    {
+        "description": "Use the @property decorator",
+        "correct": "class Circle:\n    def __init__(self, radius):\n        self._radius = radius\n    @property\n    def area(self):\n        return 3.14 * self._radius**2",
+        "incorrect": "class Circle:\n    def __init__(self, radius):\n        self._radius = radius\n    def area(self):\n        return 3.14 * self._radius**2",
+        "valid": "class Square:\n    def __init__(self, side):\n        self._side = side\n    @property\n    def area(self):\n        return self._side**2"
+    },
+    {
+        "description": "Use `isinstance` for type checking",
+        "correct": "if isinstance(x, int):\n    print('Integer')",
+        "incorrect": "if type(x) == int:\n    print('Integer')",
+        "valid": "if isinstance(name, str):\n    print('String')"
+    }
+]

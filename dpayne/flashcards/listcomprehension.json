@@ -1,0 +1,77 @@
+[
+    {
+        "concept": "Basic List Comprehension",
+        "explanation": "Basic list comprehension creates a new list by applying an expression to each item in an iterable.",
+        "example": "squared_numbers = [x**2 for x in range(5)]"
+    },
+    {
+        "concept": "Conditional List Comprehension",
+        "explanation": "Use a condition to filter elements when creating a new list.",
+        "example": "even_numbers = [x for x in range(10) if x % 2 == 0]"
+    },
+    {
+        "concept": "Nested List Comprehension",
+        "explanation": "Nested list comprehensions create lists within lists by iterating over multiple sequences.",
+        "example": "matrix = [[x * y for y in range(3)] for x in range(3)]"
+    },
+    {
+        "concept": "Flattening a Nested List",
+        "explanation": "Flatten a list of lists into a single list using a nested comprehension.",
+        "example": "flat_list = [item for sublist in nested_list for item in sublist]"
+    },
+    {
+        "concept": "List Comprehension with Multiple Loops",
+        "explanation": "Create lists by iterating over multiple sequences in separate loops.",
+        "example": "cartesian_product = [(x, y) for x in range(3) for y in range(3)]"
+    },
+    {
+        "concept": "Using `if` and `else` in List Comprehension",
+        "explanation": "Apply a condition with `if` and `else` to transform elements.",
+        "example": "transformed = [x if x % 2 == 0 else -x for x in range(10)]"
+    },
+    {
+        "concept": "Filtering with a Condition",
+        "explanation": "Include only elements that meet a condition.",
+        "example": "positive_numbers = [x for x in numbers if x > 0]"
+    },
+    {
+        "concept": "Transforming Data with Functions",
+        "explanation": "Apply a function to each element of a sequence to create a new list.",
+        "example": "uppercase_words = [word.upper() for word in words]"
+    },
+    {
+        "concept": "Using List Comprehension to Create Tuples",
+        "explanation": "Generate a list of tuples by iterating over multiple sequences.",
+        "example": "pairs = [(x, y) for x in range(3) for y in range(3)]"
+    },
+    {
+        "concept": "Set Comprehension",
+        "explanation": "Use set comprehension to create a set instead of a list.",
+        "example": "unique_squares = {x**2 for x in range(5)}"
+    },
+    {
+        "concept": "Dictionary Comprehension",
+        "explanation": "Create a dictionary by iterating over a sequence.",
+        "example": "squared_dict = {x: x**2 for x in range(5)}"
+    },
+    {
+        "concept": "List Comprehension with Generators",
+        "explanation": "Create a generator expression instead of a list, which computes elements lazily.",
+        "example": "squared_gen = (x**2 for x in range(5))"
+    },
+    {
+        "concept": "Square Matrix Transposition",
+        "explanation": "Transpose a square matrix using list comprehension.",
+        "example": "transpose = [[row[i] for row in matrix] for i in range(len(matrix))]"
+    },
+    {
+        "concept": "String Manipulation with List Comprehension",
+        "explanation": "Manipulate strings efficiently using list comprehension.",
+        "example": "vowel_count = [char for char in text if char in 'aeiou']"
+    },
+    {
+        "concept": "List Comprehension for Cartesian Products",
+        "explanation": "Create the Cartesian product of two sequences.",
+        "example": "cartesian = [(x, y) for x in [1, 2] for y in ['a', 'b']]"
+    }
+]

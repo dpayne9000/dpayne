@@ -23,5 +23,5 @@ dpayne --help
 
 Run the syntax lesson:
 ```bash
-dpayne learning syntax dpayne/lessons/questions.json
+dpayne learning syntax python1
 ```

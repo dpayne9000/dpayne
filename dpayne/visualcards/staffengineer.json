@@ -1,0 +1,127 @@
+[
+    {
+        "quality": "Technical Leadership",
+        "explanation": "A staff engineer guides the team by making informed technical decisions and leading design discussions.",
+        "visual": "   (Tech Decisions)\n        ||\n    (Design Reviews)\n        ||\n    (Code Quality)"
+    },
+    {
+        "quality": "Mentorship",
+        "explanation": "A staff engineer shares knowledge and supports the growth of other engineers in the team.",
+        "visual": "    Mentor -> [Engineer1, Engineer2]\n                 (Knowledge Transfer)"
+    },
+    {
+        "quality": "System Design Expertise",
+        "explanation": "A staff engineer is skilled at designing scalable and maintainable systems.",
+        "visual": "   [User] -> [Load Balancer] -> [Service A, Service B, Database]"
+    },
+    {
+        "quality": "Communication",
+        "explanation": "Clear communication ensures alignment between stakeholders, engineers, and other teams.",
+        "visual": "   Engineer <-> Product Manager\n        ||\n   Engineer <-> Stakeholders"
+    },
+    {
+        "quality": "Problem Solving",
+        "explanation": "A staff engineer tackles complex challenges with creative and efficient solutions.",
+        "visual": "   Problem -> [Analyze] -> [Plan] -> [Execute] -> Solution"
+    },
+    {
+        "quality": "Technical Depth",
+        "explanation": "Deep expertise in multiple domains allows a staff engineer to make sound technical judgments.",
+        "visual": "   [Networking] -- [Cloud Infrastructure] -- [Databases]"
+    },
+    {
+        "quality": "Vision Setting",
+        "explanation": "A staff engineer helps define and align the team's long-term technical goals.",
+        "visual": "    (Short-Term Goals)\n        ||\n    (Long-Term Vision)"
+    },
+    {
+        "quality": "Collaboration",
+        "explanation": "Collaboration with peers and cross-functional teams is essential for success.",
+        "visual": "   Team A <-> Team B\n        ||\n   Engineers <-> Designers"
+    },
+    {
+        "quality": "Prioritization",
+        "explanation": "The ability to focus on tasks that bring the most value and minimize distractions.",
+        "visual": "   [Task1 (High Priority)]\n        ||\n   [Task2 (Low Priority)]"
+    },
+    {
+        "quality": "Adaptability",
+        "explanation": "Quickly adapting to new challenges, technologies, and team dynamics.",
+        "visual": "   [Legacy System] -> [Modern Stack]\n            ||\n    [Small Team] -> [Large Organization]"
+    },
+    {
+        "quality": "Stakeholder Management",
+        "explanation": "Effectively managing relationships and expectations with various stakeholders.",
+        "visual": "   [Engineering Team] <-> [Stakeholders] <-> [Management]"
+    },
+    {
+        "quality": "Code Quality Advocacy",
+        "explanation": "Promoting best practices and maintaining high standards for code quality.",
+        "visual": "   (Code Reviews)\n        ||\n    (Refactoring)\n        ||\n    (Testing)"
+    },
+    {
+        "quality": "Scalability Focus",
+        "explanation": "Building systems that can handle growth in users, data, or complexity.",
+        "visual": "   [10 Users] -> [1M Users]\n         ||\n   [Single Server] -> [Cluster]"
+    },
+    {
+        "quality": "Resilience Engineering",
+        "explanation": "Designing systems to gracefully handle failures and minimize downtime.",
+        "visual": "   (Monitoring)\n        ||\n    (Fault Tolerance)\n        ||\n    (Recovery Strategies)"
+    },
+    {
+        "quality": "Delegation",
+        "explanation": "Distributing work effectively to empower the team and focus on high-level priorities.",
+        "visual": "   [Task1 -> Engineer1]\n   [Task2 -> Engineer2]"
+    },
+    {
+        "quality": "Cross-Functional Leadership",
+        "explanation": "Leading projects that involve multiple teams across different functions.",
+        "visual": "   (Engineering) + (Product) + (Design)\n                ||\n              Success"
+    },
+    {
+        "quality": "Decision Making",
+        "explanation": "Making informed, timely, and impactful decisions.",
+        "visual": "   (Analyze Options) -> (Choose Best Path) -> (Act)"
+    },
+    {
+        "quality": "Conflict Resolution",
+        "explanation": "Mediating and resolving conflicts to maintain a positive team environment.",
+        "visual": "   [Conflict Detected] -> (Discussion) -> (Resolution)"
+    },
+    {
+        "quality": "Data-Driven",
+        "explanation": "Using metrics and data to guide decisions and measure success.",
+        "visual": "   (Data Collection)\n        ||\n   (Analysis) -> (Insights)"
+    },
+    {
+        "quality": "Tooling and Automation",
+        "explanation": "Creating tools and automating processes to improve developer productivity.",
+        "visual": "   [Manual Task] -> [Automated Script]"
+    },
+    {
+        "quality": "Empathy",
+        "explanation": "Understanding and addressing the needs of team members and stakeholders.",
+        "visual": "   (Empathy) -> (Understanding) -> (Support)"
+    },
+    {
+        "quality": "Strategic Thinking",
+        "explanation": "Aligning technical decisions with business objectives and long-term goals.",
+        "visual": "   (Technical Plan) -> (Business Impact)"
+    },
+    {
+        "quality": "Continuous Learning",
+        "explanation": "Staying updated with new technologies, tools, and industry trends.",
+        "visual": "   (Books) + (Courses) + (Hands-On Practice)"
+    },
+    {
+        "quality": "Ownership",
+        "explanation": "Taking responsibility for the success and failure of projects.",
+        "visual": "   (Accountability)\n        ||\n    (Results-Driven)"
+    },
+    {
+        "quality": "Cultural Influence",
+        "explanation": "Shaping and maintaining a positive and productive engineering culture.",
+        "visual": "   (Inclusion)\n        ||\n    (Collaboration)\n        ||\n    (Innovation)"
+    }
+]

@@ -1,0 +1,57 @@
+[
+    {
+        "concept": "Two Pointers Technique",
+        "explanation": "Two pointers are used to iterate over a data structure from different ends or at different speeds to solve problems efficiently.",
+        "example": "def is_palindrome(s):\n    left, right = 0, len(s) - 1\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True"
+    },
+    {
+        "concept": "Binary Search",
+        "explanation": "Binary search divides the search space in half at each step, making it efficient for sorted data.",
+        "example": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1"
+    },
+    {
+        "concept": "Dynamic Programming: Memoization",
+        "explanation": "Memoization stores the results of expensive function calls to avoid redundant calculations.",
+        "example": "def fib(n, memo={}):\n    if n in memo:\n        return memo[n]\n    if n <= 2:\n        return 1\n    memo[n] = fib(n - 1, memo) + fib(n - 2, memo)\n    return memo[n]"
+    },
+    {
+        "concept": "Dynamic Programming: Tabulation",
+        "explanation": "Tabulation builds a table of solutions to subproblems iteratively.",
+        "example": "def fib(n):\n    dp = [0] * (n + 1)\n    dp[1] = 1\n    for i in range(2, n + 1):\n        dp[i] = dp[i - 1] + dp[i - 2]\n    return dp[n]"
+    },
+    {
+        "concept": "Sliding Window",
+        "explanation": "The sliding window technique is used to find subarrays or substrings within a given array or string efficiently.",
+        "example": "def max_sum(nums, k):\n    max_sum = 0\n    window_sum = sum(nums[:k])\n    for i in range(len(nums) - k):\n        window_sum += nums[i + k] - nums[i]\n        max_sum = max(max_sum, window_sum)\n    return max_sum"
+    },
+    {
+        "concept": "Backtracking",
+        "explanation": "Backtracking is a brute-force algorithmic technique that systematically explores all possibilities to solve problems like permutations or combinations.",
+        "example": "def solve_n_queens(n):\n    def backtrack(row, cols, diagonals, anti_diagonals):\n        if row == n:\n            result.append(cols[:])\n            return\n        for col in range(n):\n            if col in cols or (row - col) in diagonals or (row + col) in anti_diagonals:\n                continue\n            cols.append(col)\n            backtrack(row + 1, cols, diagonals | {row - col}, anti_diagonals | {row + col})\n            cols.pop()\n\n    result = []\n    backtrack(0, [], set(), set())\n    return result"
+    },
+    {
+        "concept": "Hash Map for Frequency Counting",
+        "explanation": "Hash maps are often used to count the frequency of elements efficiently.",
+        "example": "from collections import Counter\n\ndef most_frequent(nums):\n    counter = Counter(nums)\n    return max(counter, key=counter.get)"
+    },
+    {
+        "concept": "Union-Find (Disjoint Set Union)",
+        "explanation": "Union-Find is a data structure that keeps track of connected components efficiently.",
+        "example": "class UnionFind:\n    def __init__(self, n):\n        self.parent = list(range(n))\n\n    def find(self, x):\n        if self.parent[x] != x:\n            self.parent[x] = self.find(self.parent[x])\n        return self.parent[x]\n\n    def union(self, x, y):\n        root_x = self.find(x)\n        root_y = self.find(y)\n        if root_x != root_y:\n            self.parent[root_x] = root_y"
+    },
+    {
+        "concept": "Breadth-First Search (BFS)",
+        "explanation": "BFS is used to explore nodes level by level in a graph or tree.",
+        "example": "from collections import deque\n\ndef bfs(graph, start):\n    visited = set()\n    queue = deque([start])\n    while queue:\n        node = queue.popleft()\n        if node not in visited:\n            visited.add(node)\n            queue.extend(graph[node] - visited)\n    return visited"
+    },
+    {
+        "concept": "Depth-First Search (DFS)",
+        "explanation": "DFS is used to explore nodes as far as possible before backtracking.",
+        "example": "def dfs(graph, start, visited=set()):\n    if start not in visited:\n        visited.add(start)\n        for neighbor in graph[start]:\n            dfs(graph, neighbor, visited)\n    return visited"
+    },
+    {
+        "concept": "Kadane's Algorithm",
+        "explanation": "Kadane's Algorithm efficiently finds the maximum subarray sum.",
+        "example": "def max_subarray(nums):\n    max_sum = curr_sum = nums[0]\n    for num in nums[1:]:\n        curr_sum = max(num, curr_sum + num)\n        max_sum = max(max_sum, curr_sum)\n    return max_sum"
+    }
+]

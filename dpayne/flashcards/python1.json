@@ -1,0 +1,27 @@
+[
+    {
+        "concept": "List Comprehension",
+        "explanation": "List comprehensions provide a concise way to create lists. They are more compact and faster than traditional loops for list creation.",
+        "example": "squared_numbers = [x**2 for x in range(10)]"
+    },
+    {
+        "concept": "Lambda Function",
+        "explanation": "A lambda function is a small anonymous function defined with the `lambda` keyword. It can have any number of arguments but only one expression.",
+        "example": "add = lambda a, b: a + b"
+    },
+    {
+        "concept": "Context Manager",
+        "explanation": "A context manager is used to allocate and release resources precisely when you want. It is implemented using the `with` statement.",
+        "example": "with open('file.txt', 'r') as file:\n    data = file.read()"
+    },
+    {
+        "concept": "Decorators",
+        "explanation": "Decorators are functions that modify the behavior of another function or method. They are applied using the `@decorator_name` syntax.",
+        "example": "@decorator\ndef my_function():\n    pass"
+    },
+    {
+        "concept": "Type Hinting",
+        "explanation": "Type hints specify the expected data types of variables and function parameters, making the code more readable and easier to debug.",
+        "example": "def greet(name: str) -> str:\n    return f'Hello, {name}'"
+    }
+]
