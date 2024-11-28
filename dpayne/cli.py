@@ -7,6 +7,7 @@ from dpayne.visual_flashcards import load_visual_flashcards, display_visual_flas
 from dpayne.games.timewarp import main as timewarp_main
 from dpayne.music.drums.runtime import main as drums_main
 from dpayne.converse import main as converse_main
+from .social import main as bbs_main
 
 LESSONS_DIR = "./dpayne/lessons/"
 FLASHCARDS_DIR = "./dpayne/flashcards/"
@@ -40,6 +41,11 @@ def main():
         formatter_class=argparse.RawTextHelpFormatter
     )
     subparsers = parser.add_subparsers(dest="command")
+
+    social_parser = subparsers.add_parser("social", help="Ai Help Tools")
+    social_parser.add_argument(
+        "topic", choices=["bbs", "irc"], help="The music tools (e.g., drums)"
+    )
 
     ai_parser = subparsers.add_parser("ai", help="Ai Help Tools")
     ai_parser.add_argument(
@@ -88,6 +94,9 @@ def main():
     elif args.command == "ai":
         if args.topic == "chatgpt":
             converse_main()
+    elif args.command == "social":
+        if args.topic == "bbs":
+            bbs_main()
     else:
         parser.print_help()
 

@@ -1,16 +1,17 @@
 from openai import OpenAI
 import os
 
-if os.environ.get('OPENAI_API_KEY') is None:
-    print("OPENAI_API_KEY environment variable not set. Please set it before running the script.")
-    exit(1)
-
-client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
-
-
 class Converser:
-    def __init__(self):
+    def __init__(self, api_key):
         self.conversation = []  # To store conversation history
+        self.validate()
+        api_key = api_key or os.environ.get('OPENAI_API_KEY')
+        self.client = OpenAI(api_key=api_key)
+
+    def validate(self):
+        if os.environ.get('OPENAI_API_KEY') is None:
+            print("OPENAI_API_KEY environment variable not set. Please set it before running the script.")
+            exit(1)
 
     def add_message(self, role, content):
         """Add a message to the conversation."""
@@ -20,7 +21,7 @@ class Converser:
         """Get a response from the model."""
         self.add_message("user", prompt)
         try:
-            response = client.chat.completions.create(
+            response = self.client.chat.completions.create(
                 model=model,
                 messages=self.conversation,
                 max_tokens=max_tokens,
@@ -36,7 +37,7 @@ class Converser:
 
 
 if __name__ == "__main__":
-    api_key = "YOUR_OPENAI_API_KEY"  # Replace with your actual OpenAI API key
+    api_key = "" 
     gpt = Converser()
     
     print("Welcome to ChatGPT! Type 'exit' to end the conversation.")
