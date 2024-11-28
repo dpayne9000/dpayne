@@ -42,9 +42,9 @@ def main():
     )
     subparsers = parser.add_subparsers(dest="command")
 
-    social_parser = subparsers.add_parser("social", help="Ai Help Tools")
+    social_parser = subparsers.add_parser("social", help="Old Timey Social Media Tools")
     social_parser.add_argument(
-        "topic", choices=["bbs", "irc"], help="The music tools (e.g., drums)"
+        "topic", choices=["bbs", "irc"], help="old school communication device (e.g., radio)"
     )
 
     ai_parser = subparsers.add_parser("ai", help="Ai Help Tools")
@@ -93,7 +93,7 @@ def main():
             curses.wrapper(drums_main)
     elif args.command == "ai":
         if args.topic == "chatgpt":
-            converse_main()
+            converse_main() 
     elif args.command == "social":
         if args.topic == "bbs":
             bbs_main()
