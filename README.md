@@ -2,10 +2,14 @@
 
 Dpayne CLI is a learning platform for Python programming syntax and concepts.
 
+![DpayneCLI](dpayne_cli.png)
+
 ## Features
 
 - Syntax correction exercises
 - Modular learning tasks
+- Basic AI chat integration
+- Drum machine
 
 ## Installation
 
