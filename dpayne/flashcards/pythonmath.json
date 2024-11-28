@@ -1,0 +1,192 @@
+[
+    {
+        "concept": "abs()",
+        "explanation": "Returns the absolute value of a number.",
+        "example": "abs(-5)  # Output: 5"
+    },
+    {
+        "concept": "round()",
+        "explanation": "Rounds a number to the nearest integer or specified number of decimal places.",
+        "example": "round(3.14159, 2)  # Output: 3.14"
+    },
+    {
+        "concept": "pow()",
+        "explanation": "Returns the value of a number raised to a power.",
+        "example": "pow(2, 3)  # Output: 8"
+    },
+    {
+        "concept": "** (Exponentiation)",
+        "explanation": "Calculates the power of a number.",
+        "example": "2 ** 3  # Output: 8"
+    },
+    {
+        "concept": "// (Floor Division)",
+        "explanation": "Divides two numbers and returns the largest integer less than or equal to the result.",
+        "example": "10 // 3  # Output: 3"
+    },
+    {
+        "concept": "% (Modulus)",
+        "explanation": "Returns the remainder of a division.",
+        "example": "10 % 3  # Output: 1"
+    },
+    {
+        "concept": "divmod()",
+        "explanation": "Returns a tuple of quotient and remainder.",
+        "example": "divmod(10, 3)  # Output: (3, 1)"
+    },
+    {
+        "concept": "sum()",
+        "explanation": "Returns the sum of a sequence of numbers.",
+        "example": "sum([1, 2, 3])  # Output: 6"
+    },
+    {
+        "concept": "min()",
+        "explanation": "Returns the smallest value in a sequence or among arguments.",
+        "example": "min(1, 2, 3)  # Output: 1"
+    },
+    {
+        "concept": "max()",
+        "explanation": "Returns the largest value in a sequence or among arguments.",
+        "example": "max(1, 2, 3)  # Output: 3"
+    },
+    {
+        "concept": "math.sqrt()",
+        "explanation": "Returns the square root of a number.",
+        "example": "import math\nmath.sqrt(16)  # Output: 4.0"
+    },
+    {
+        "concept": "math.ceil()",
+        "explanation": "Returns the smallest integer greater than or equal to a number.",
+        "example": "import math\nmath.ceil(3.2)  # Output: 4"
+    },
+    {
+        "concept": "math.floor()",
+        "explanation": "Returns the largest integer less than or equal to a number.",
+        "example": "import math\nmath.floor(3.8)  # Output: 3"
+    },
+    {
+        "concept": "math.fabs()",
+        "explanation": "Returns the absolute value of a number as a float.",
+        "example": "import math\nmath.fabs(-5)  # Output: 5.0"
+    },
+    {
+        "concept": "math.factorial()",
+        "explanation": "Returns the factorial of an integer.",
+        "example": "import math\nmath.factorial(5)  # Output: 120"
+    },
+    {
+        "concept": "math.gcd()",
+        "explanation": "Returns the greatest common divisor of two integers.",
+        "example": "import math\nmath.gcd(12, 8)  # Output: 4"
+    },
+    {
+        "concept": "math.isqrt()",
+        "explanation": "Returns the integer square root of a number.",
+        "example": "import math\nmath.isqrt(16)  # Output: 4"
+    },
+    {
+        "concept": "math.exp()",
+        "explanation": "Returns e raised to the power of a number.",
+        "example": "import math\nmath.exp(2)  # Output: 7.38905609893065"
+    },
+    {
+        "concept": "math.log()",
+        "explanation": "Returns the natural logarithm (base e) of a number.",
+        "example": "import math\nmath.log(10)  # Output: 2.302585092994046"
+    },
+    {
+        "concept": "math.log10()",
+        "explanation": "Returns the base-10 logarithm of a number.",
+        "example": "import math\nmath.log10(100)  # Output: 2.0"
+    },
+    {
+        "concept": "math.log2()",
+        "explanation": "Returns the base-2 logarithm of a number.",
+        "example": "import math\nmath.log2(8)  # Output: 3.0"
+    },
+    {
+        "concept": "math.sin()",
+        "explanation": "Returns the sine of a number in radians.",
+        "example": "import math\nmath.sin(math.pi / 2)  # Output: 1.0"
+    },
+    {
+        "concept": "math.cos()",
+        "explanation": "Returns the cosine of a number in radians.",
+        "example": "import math\nmath.cos(0)  # Output: 1.0"
+    },
+    {
+        "concept": "math.tan()",
+        "explanation": "Returns the tangent of a number in radians.",
+        "example": "import math\nmath.tan(math.pi / 4)  # Output: 1.0"
+    },
+    {
+        "concept": "math.degrees()",
+        "explanation": "Converts an angle from radians to degrees.",
+        "example": "import math\nmath.degrees(math.pi)  # Output: 180.0"
+    },
+    {
+        "concept": "math.radians()",
+        "explanation": "Converts an angle from degrees to radians.",
+        "example": "import math\nmath.radians(180)  # Output: 3.141592653589793"
+    },
+    {
+        "concept": "math.hypot()",
+        "explanation": "Returns the Euclidean norm, sqrt(x*x + y*y).",
+        "example": "import math\nmath.hypot(3, 4)  # Output: 5.0"
+    },
+    {
+        "concept": "math.copysign()",
+        "explanation": "Returns a number with the magnitude of the first argument and the sign of the second argument.",
+        "example": "import math\nmath.copysign(5, -1)  # Output: -5.0"
+    },
+    {
+        "concept": "int()",
+        "explanation": "Converts a number or string to an integer.",
+        "example": "int(3.8)  # Output: 3"
+    },
+    {
+        "concept": "float()",
+        "explanation": "Converts a number or string to a float.",
+        "example": "float(5)  # Output: 5.0"
+    },
+    {
+        "concept": "complex()",
+        "explanation": "Creates a complex number.",
+        "example": "complex(2, 3)  # Output: (2+3j)"
+    },
+    {
+        "concept": "bin()",
+        "explanation": "Converts an integer to a binary string.",
+        "example": "bin(10)  # Output: '0b1010'"
+    },
+    {
+        "concept": "oct()",
+        "explanation": "Converts an integer to an octal string.",
+        "example": "oct(10)  # Output: '0o12'"
+    },
+    {
+        "concept": "hex()",
+        "explanation": "Converts an integer to a hexadecimal string.",
+        "example": "hex(255)  # Output: '0xff'"
+    },
+    {
+        "concept": "math.trunc()",
+        "explanation": "Truncates a number to its integer part.",
+        "example": "import math\nmath.trunc(3.8)  # Output: 3"
+    },
+    {
+        "concept": "math.prod()",
+        "explanation": "Returns the product of a sequence of numbers.",
+        "example": "import math\nmath.prod([1, 2, 3])  # Output: 6"
+    },
+    {
+        "concept": "math.perm()",
+        "explanation": "Returns the number of permutations of n items taken k at a time.",
+        "example": "import math\nmath.perm(5, 3)  # Output: 60"
+    },
+    {
+        "concept": "math.comb()",
+        "explanation": "Returns the number of combinations of n items taken k at a time.",
+        "example": "import math\nmath.comb(5, 3)  # Output: 10"
+    }
+]
