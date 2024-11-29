@@ -2,3 +2,4 @@
 build
 dpayne.egg-info
 dpayne/__pycache__
+dpayne/modules/__pycache__/

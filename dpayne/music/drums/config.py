@@ -13,7 +13,7 @@ DRUM_SOUNDS = [
     {"name": "Tom2", "file": "./samples/tom2.wav"},
     {"name": "Rim", "file": "./samples/rim.wav"},
     {"name": "Clap", "file": "./samples/clap.wav"},
-    {"name": "Cowbell", "file": "./samples/cowbell.wav"}
+    {"name": "Cowbell", "file": "./samples/cowbell.wav"},
 ]
 
 # Default settings

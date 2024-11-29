@@ -5,6 +5,7 @@ from .sequencer import play_pattern
 from .config import DEFAULT_BPM, PATTERN_STEPS, TRACK_COUNT
 from .pattern_io import save_pattern, load_pattern
 
+
 def main(stdscr):
     bpm = DEFAULT_BPM
     pattern = [[0 for _ in range(PATTERN_STEPS)] for _ in range(TRACK_COUNT)]
@@ -21,12 +22,21 @@ def main(stdscr):
     stdscr.timeout(int(60000 / bpm / 4))
 
     while True:
-        draw_interface(stdscr, current_step, current_track, pattern, bpm, swing, syncopation, step_offset)
+        draw_interface(
+            stdscr,
+            current_step,
+            current_track,
+            pattern,
+            bpm,
+            swing,
+            syncopation,
+            step_offset,
+        )
         key = stdscr.getch()
 
-        if key == ord('q'):
+        if key == ord("q"):
             break
-        elif key == ord(' '):
+        elif key == ord(" "):
             pattern[current_track][current_step] ^= 1
         elif key == curses.KEY_UP:
             current_track = (current_track - 1) % TRACK_COUNT
@@ -36,22 +46,26 @@ def main(stdscr):
             current_step = (current_step - 1) % PATTERN_STEPS
         elif key == curses.KEY_RIGHT:
             current_step = (current_step + 1) % PATTERN_STEPS
-        elif key == ord('p'):
+        elif key == ord("p"):
             playing = not playing
-        elif key == ord('+'):
+        elif key == ord("+"):
             bpm = min(bpm + 5, 300)
             stdscr.timeout(int(60000 / bpm / 4))
-        elif key == ord('-'):
+        elif key == ord("-"):
             bpm = max(bpm - 5, 30)
             stdscr.timeout(int(60000 / bpm / 4))
-        elif key == ord('w'):
-            swing[current_track][current_step] = (swing[current_track][current_step] + 1) % 2
-        elif key == ord('s'):  # Save pattern
+        elif key == ord("w"):
+            swing[current_track][current_step] = (
+                swing[current_track][current_step] + 1
+            ) % 2
+        elif key == ord("s"):  # Save pattern
             try:
-                save_pattern("pattern.json", pattern, swing, syncopation, step_offset, bpm)
+                save_pattern(
+                    "pattern.json", pattern, swing, syncopation, step_offset, bpm
+                )
             except Exception as e:
                 print(f"Error saving pattern: {e}")
-        elif key == ord('l'):  # Load pattern
+        elif key == ord("l"):  # Load pattern
             try:
                 data = load_pattern("pattern.json")
                 pattern = data["pattern"]

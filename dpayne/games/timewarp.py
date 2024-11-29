@@ -1,6 +1,7 @@
 import random
 import time
 
+
 def main():
     # ASCII Art for characters
     player_art = """
@@ -33,7 +34,7 @@ def main():
     spells = {
         "Fireball": {"damage": (15, 25), "cost": 10},
         "Ice Blast": {"damage": (10, 20), "cost": 5, "effect": "freeze"},
-        "Motivational Speech": {"damage": (5, 15), "cost": 8, "effect": "inspiration"}
+        "Motivational Speech": {"damage": (5, 15), "cost": 8, "effect": "inspiration"},
     }
 
     player_mana = 50  # Mana for casting spells
@@ -56,7 +57,7 @@ def main():
 
     def print_slow(text):
         for char in text:
-            print(char, end='', flush=True)
+            print(char, end="", flush=True)
             time.sleep(0.03)
         print()
 
@@ -82,7 +83,9 @@ def main():
 
         if choice == "1":
             # Player attacks
-            office_worker_health, attack_points = attack(player_health, office_worker_health, player_attack_range)
+            office_worker_health, attack_points = attack(
+                player_health, office_worker_health, player_attack_range
+            )
             print_slow(f"You attacked Mr. B for {attack_points} damage!")
 
         elif choice == "2":
@@ -93,7 +96,9 @@ def main():
             # Use a spell
             print("Choose a spell:")
             for spell, details in spells.items():
-                print(f"{spell}: Damage {details['damage']}, Mana Cost {details['cost']}")
+                print(
+                    f"{spell}: Damage {details['damage']}, Mana Cost {details['cost']}"
+                )
             spell_choice = input("> ").title()
 
             if spell_choice in spells:
@@ -122,15 +127,19 @@ def main():
                 if item_choice == "Potion":
                     heal_amount = random.randint(15, 30)
                     player_health = min(100, player_health + heal_amount)
-                    print_slow(f"You used a Potion and healed for {heal_amount} health!")
+                    print_slow(
+                        f"You used a Potion and healed for {heal_amount} health!"
+                    )
                 elif item_choice == "Coffee":
                     player_attack_range = (20, 30)
-                    print_slow("You drank some Coffee! Your attacks will be stronger for the next turn!")
+                    print_slow(
+                        "You drank some Coffee! Your attacks will be stronger for the next turn!"
+                    )
                 elif item_choice == "Stapler":
                     damage = random.randint(10, 25)
                     office_worker_health -= damage
                     print_slow(f"You threw a Stapler at him, dealing {damage} damage!")
-                
+
                 inventory[item_choice] -= 1
             else:
                 print_slow("Invalid item or none left! You waste your turn.")
@@ -145,12 +154,18 @@ def main():
         print_slow("\nMr. B prepares to retaliate!\n")
         if choice == "2":
             # Player defends - reduce damage
-            player_health, attack_points = attack(office_worker_health, player_health, office_worker_attack_range)
+            player_health, attack_points = attack(
+                office_worker_health, player_health, office_worker_attack_range
+            )
             reduced_damage = attack_points // 2
             player_health += reduced_damage
-            print_slow(f"Mr. B attacks you for {attack_points} damage, but you reduce it to {reduced_damage} damage!")
+            print_slow(
+                f"Mr. B attacks you for {attack_points} damage, but you reduce it to {reduced_damage} damage!"
+            )
         else:
-            player_health, attack_points = attack(office_worker_health, player_health, office_worker_attack_range)
+            player_health, attack_points = attack(
+                office_worker_health, player_health, office_worker_attack_range
+            )
             print_slow(f"Mr. B attacks you for {attack_points} damage!")
 
         print()

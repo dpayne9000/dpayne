@@ -4,7 +4,7 @@ import random
 
 def load_questions(file_path: str) -> list:
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, "r") as file:
             questions = json.load(file)
         return questions
     except FileNotFoundError:

@@ -24,7 +24,9 @@ def start_flashcards(flashcards: list) -> None:
 
     print("Welcome to Python Flash Cards!")
     print("You will be shown a concept name, explanation, and example code.")
-    print("Press 'l' to learn more online, 'n' to view the next card, or 'q' to quit.\n")
+    print(
+        "Press 'l' to learn more online, 'n' to view the next card, or 'q' to quit.\n"
+    )
 
     for card in flashcards:
         print(f"Concept: {card['concept']}")
@@ -33,12 +35,18 @@ def start_flashcards(flashcards: list) -> None:
         print("-" * 50)
 
         while True:
-            action = input("Press 'l' for Google search, 'n' for next card, or 'q' to quit: ").strip().lower()
-            if action == 'l':
-                open_google_search(card['concept'])
-            elif action == 'n':
+            action = (
+                input(
+                    "Press 'l' for Google search, 'n' for next card, or 'q' to quit: "
+                )
+                .strip()
+                .lower()
+            )
+            if action == "l":
+                open_google_search(card["concept"])
+            elif action == "n":
                 break
-            elif action == 'q':
+            elif action == "q":
                 print("Exiting Flash Cards. Happy learning!")
                 return
             else:

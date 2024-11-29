@@ -4,16 +4,17 @@ import os
 
 class BBSClient:
     def __init__(self):
-        self.base_url = os.environ['BASE_URL'] | "http://127.0.0.1:5000"
+        self.base_url = os.getenv("BASE_URL", "http://127.0.0.1:5000")
 
     def list_posts(self):
-        """Get all posts from the server."""
         try:
             response = requests.get(f"{self.base_url}/posts")
             if response.status_code == 200:
                 posts = response.json()
                 for post in posts:
-                    print(f"Post ID: {post['id']} | Author: {post['author']} | Posted: {post['timestamp']}")
+                    print(
+                        f"Post ID: {post['id']} | Author: {post['author']} | Posted: {post['timestamp']}"
+                    )
                     print(f"Content: {post['content']}\n")
             else:
                 print("Failed to retrieve posts.")
@@ -21,11 +22,7 @@ class BBSClient:
             print(f"Error: {e}")
 
     def create_post(self, author, content):
-        """Create a new post on the server."""
-        data = {
-            "author": author,
-            "content": content
-        }
+        data = {"author": author, "content": content}
         try:
             response = requests.post(f"{self.base_url}/posts", json=data)
             if response.status_code == 201:
@@ -36,13 +33,11 @@ class BBSClient:
             print(f"Error: {e}")
 
     def add_comment(self, post_id, author, content):
-        """Add a comment to an existing post."""
-        data = {
-            "author": author,
-            "content": content
-        }
+        data = {"author": author, "content": content}
         try:
-            response = requests.post(f"{self.base_url}/posts/{post_id}/comments", json=data)
+            response = requests.post(
+                f"{self.base_url}/posts/{post_id}/comments", json=data
+            )
             if response.status_code == 201:
                 print(f"Comment by '{author}' added successfully.")
             else:
@@ -51,19 +46,22 @@ class BBSClient:
             print(f"Error: {e}")
 
     def view_post(self, post_id):
-        """View details of a specific post including its comments."""
         try:
             response = requests.get(f"{self.base_url}/posts")
             if response.status_code == 200:
                 posts = response.json()
-                post = next((p for p in posts if p['id'] == post_id), None)
+                post = next((p for p in posts if p["id"] == post_id), None)
                 if post:
-                    print(f"Post ID: {post['id']} | Author: {post['author']} | Posted: {post['timestamp']}")
+                    print(
+                        f"Post ID: {post['id']} | Author: {post['author']} | Posted: {post['timestamp']}"
+                    )
                     print(f"Content: {post['content']}\n")
-                    if post['comments']:
+                    if post["comments"]:
                         print("Comments:")
-                        for comment in post['comments']:
-                            print(f"    Author: {comment['author']} | Posted: {comment['timestamp']}")
+                        for comment in post["comments"]:
+                            print(
+                                f"    Author: {comment['author']} | Posted: {comment['timestamp']}"
+                            )
                             print(f"    {comment['content']}\n")
                     else:
                         print("No comments yet.\n")

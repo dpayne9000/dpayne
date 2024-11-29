@@ -1,1 +1,16 @@
-{}
+[
+    {
+        "id": 1,
+        "author": "agfdsa",
+        "content": "fasdfasd",
+        "comments": [],
+        "timestamp": "2024-11-28 08:26:13.788055"
+    },
+    {
+        "id": 2,
+        "author": "sadva",
+        "content": "asfab",
+        "comments": [],
+        "timestamp": "2024-11-28 08:28:46.065513"
+    }
+]
