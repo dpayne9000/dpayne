@@ -36,6 +36,22 @@ def display_ascii_art() -> None:
     )
 
 
+import argparse
+from colorama import Fore, Style
+from dpayne.syntax_trainer import load_questions, start_training
+from dpayne.flashcards import load_flashcards, start_flashcards
+from dpayne.visual_flashcards import load_visual_flashcards, display_visual_flashcards
+from dpayne.games.timewarp import main as timewarp_main
+from dpayne.music.drums.runtime import main as drums_main
+from dpayne.converse import main as converse_main
+from dpayne.modules.http_requester import HttpRequester
+from .social import main as bbs_main
+
+LESSONS_DIR: str = "./dpayne/lessons/"
+FLASHCARDS_DIR: str = "./dpayne/flashcards/"
+VISUALCARDS_DIR: str = "./dpayne/visualcards/"
+
+
 # Handlers for each command
 def handle_learning(topic: str, lesson_file: str) -> None:
     if topic == "syntax":
@@ -72,6 +88,12 @@ def handle_social(topic: str) -> None:
         bbs_main()
 
 
+def handle_tools(topic: str) -> None:
+    if topic == "http":
+        requester = HttpRequester()
+        requester.start_ui()
+
+
 # Command dispatcher
 def dispatch_command(args: argparse.Namespace) -> None:
     if args.command == "learning":
@@ -85,10 +107,7 @@ def dispatch_command(args: argparse.Namespace) -> None:
     elif args.command == "social":
         handle_social(args.topic)
     elif args.command == "tools":
-        if args.topic == "http":
-            from dpayne.modules.http_requester import main as http_main
-
-            http_main()
+        handle_tools(args.topic)
     else:
         print(
             "Unknown command. Please use 'dpayne <command> --help' for more information."
@@ -146,6 +165,7 @@ def main() -> None:
         "lesson_file", help="Path to the lesson file with no extension (e.g., python1)"
     )
 
+    # Tools command
     tools_parser = subparsers.add_parser(
         "tools", help="Tools to help you get stuff done!"
     )
