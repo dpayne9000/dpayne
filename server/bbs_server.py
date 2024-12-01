@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, abort
 from flask_socketio import SocketIO
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
+# from flask_limiter import Limiter
+# from flask_limiter.util import get_remote_address
 from flask_cors import CORS
 from flask_talisman import Talisman
 from datetime import datetime
@@ -15,13 +15,13 @@ app = Flask(__name__)
 Talisman(app)
 
 # Cross-Origin Resource Sharing (CORS) with strict settings
-CORS(app, resources={r"/posts/*": {"origins": ["https://your-domain.com"]}})
+CORS(app, resources={r"/posts/*": {"origins": ["*"]}})
 
 # Rate limiter to prevent abuse
-limiter = Limiter(get_remote_address, app=app, default_limits=["10 per minute"])
+# limiter = Limiter(get_remote_address, app=app, default_limits=["10 per minute"])
 # SocketIO for real-time features
 socketio = SocketIO(
-    app, cors_allowed_origins="https://your-domain.com", async_mode="gevent"
+    app, async_mode="gevent"
 )
 
 DATA_FILE = "./data/social_board_data.json"
@@ -44,18 +44,18 @@ def save_posts(posts):
 
 # Endpoints
 @app.route("/posts", methods=["GET"])
-@limiter.limit("10 per minute")
+# @limiter.limit("10 per minute")
 def get_posts():
     posts = load_posts()
     return jsonify(posts)
 
 
 @app.route("/posts", methods=["POST"])
-@limiter.limit("5 per minute")
+# @limiter.limit("5 per minute")
 def create_post():
     # Authentication placeholder - replace with your auth logic
-    if not request.headers.get("Authorization"):
-        abort(401, description="Unauthorized - Missing Authorization header")
+    # if not request.headers.get("Authorization"):
+    #     abort(401, description="Unauthorized - Missing Authorization header")
 
     data = request.get_json()
     if not data:
@@ -88,7 +88,7 @@ def create_post():
 
 
 @app.route("/posts/<int:post_id>/comments", methods=["POST"])
-@limiter.limit("5 per minute")
+# @limiter.limit("5 per minute")
 def add_comment(post_id):
     # Authentication placeholder
     # if not request.headers.get("Authorization"):

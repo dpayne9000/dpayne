@@ -20,6 +20,7 @@ setup(
         "flask-talisman",
         "gunicorn",
         "gevent",
+	"pygame"
     ],
     entry_points={
         "console_scripts": [
