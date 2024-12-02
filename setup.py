@@ -20,6 +20,7 @@ setup(
         "flask-talisman",
         "gunicorn",
         "gevent",
+        "websocket-client"
 	"pygame"
     ],
     entry_points={

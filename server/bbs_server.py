@@ -1,5 +1,5 @@
-from flask import Flask, request, jsonify, abort
-from flask_socketio import SocketIO
+from flask import Flask, request, jsonify
+from flask_socketio import SocketIO, emit, join_room, leave_room
 # from flask_limiter import Limiter
 # from flask_limiter.util import get_remote_address
 from flask_cors import CORS
@@ -127,6 +127,30 @@ def add_comment(post_id):
 
     return jsonify({"error": "Post not found"}), 404
 
+connected_users = {}  # Maps user sessions to nicknames
+
+@socketio.on('join_irc')
+def handle_join_irc(data):
+    nickname = data.get('nickname', 'Guest')
+    room = data.get('room', 'default')
+    session_id = request.sid
+    connected_users[session_id] = nickname
+    join_room(room)
+    emit('irc_message', {'user': 'System', 'message': f'{nickname} has joined the room.'}, room=room)
+
+@socketio.on('send_irc_message')
+def handle_irc_message(data):
+    room = data.get('room', 'default')
+    message = data.get('message', '')
+    nickname = connected_users.get(request.sid, 'Unknown')
+    emit('irc_message', {'user': nickname, 'message': message}, room=room)
+
+@socketio.on('leave_irc')
+def handle_leave_irc(data):
+    room = data.get('room', 'default')
+    nickname = connected_users.pop(request.sid, 'Unknown')
+    leave_room(room)
+    emit('irc_message', {'user': 'System', 'message': f'{nickname} has left the room.'}, room=room)
 
 # SocketIO Events
 @socketio.on("connect")
@@ -136,6 +160,8 @@ def handle_connect():
 
 @socketio.on("disconnect")
 def handle_disconnect():
+    nickname = connected_users.pop(request.sid, 'Unknown')
+    emit('irc_message', {'user': 'System', 'message': f'{nickname} has disconnected.'}, broadcast=True)
     print("Client disconnected")
 
 

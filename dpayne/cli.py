@@ -3,6 +3,7 @@ import curses
 from colorama import Fore, Style
 from typing import Optional
 
+
 from dpayne.syntax_trainer import load_questions, start_training
 from dpayne.flashcards import load_flashcards, start_flashcards
 from dpayne.visual_flashcards import load_visual_flashcards, display_visual_flashcards
@@ -10,6 +11,7 @@ from dpayne.games.timewarp import main as timewarp_main
 from dpayne.music.drums.runtime import main as drums_main
 from dpayne.converse import main as converse_main
 from .social import main as bbs_main
+from .modules.irc_client import main as irc_main
 
 LESSONS_DIR: str = "./dpayne/lessons/"
 FLASHCARDS_DIR: str = "./dpayne/flashcards/"
@@ -86,6 +88,9 @@ def handle_ai(topic: str) -> None:
 def handle_social(topic: str) -> None:
     if topic == "bbs":
         bbs_main()
+    elif topic == "irc":
+        irc_main()
+
 
 
 def handle_tools(topic: str) -> None:
@@ -172,6 +177,7 @@ def main() -> None:
     tools_parser.add_argument(
         "topic", choices=["http"], help="The tool to use (e.g., http)"
     )
+    
 
     args = parser.parse_args()
 
